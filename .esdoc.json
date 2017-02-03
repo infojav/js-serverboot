@@ -1,0 +1,14 @@
+{
+  "title": "node-express app quick bootstrap",
+  "source": "./src",
+  "destination": "./doc",
+  "coverage": false,
+  "lint": false,
+  "test": {
+    "type": "mocha",
+    "source": "./test"
+  },
+  "manual": {
+    "readme": ["./README.md"]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "my-app",
+  "version": "0.2.0",
+  "description": "app node javascript",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "debug": "node-debug app.js",
+    "test": "mocha --harmony -u bdd -R spec -t 5500 --recursive",
+    "watch:test": "mocha --harmony -u bdd -R spec -t 5500 --recursive --watch",
+    "lint": "./node_modules/.bin/eslint --cache --fix ./src",
+    "build:doc": "npm run build:esdoc && npm run build:apidoc",
+    "clean:doc": "npm run clean:esdoc && npm run clean:apidoc",
+    "build:esdoc": "./node_modules/.bin/esdoc",
+    "clean:esdoc": "rimraf doc/*",
+    "build:apidoc": "./node_modules/.bin/apidoc -i ./src/routes/ -o apidoc/",
+    "clean:apidoc": "rimraf apidoc/*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.5",
+    "chai": "^3.5.0",
+    "esdoc": "^0.5.2",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^2.4.5",
+    "node-uuid": "^1.4.7",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  }
+}
